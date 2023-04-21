@@ -1,0 +1,27 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+      <style>
+        .py-repl-run-button {
+            opacity: 100%;
+        }
+      </style>
+    </head>
+
+  <body>
+    <h1>Here is a Python REPL</h1>
+    <py-repl>
+        hello = "Hello world!"
+        print(hello)
+    </py-repl>
+    <py-terminal id="my-terminal"></py-terminal>
+    <py-script>
+    from js import document as _DOC
+    def clear_term():
+        ter = _DOC.getElementById("my-terminal").firstChild
+        ter.innerHTML = ''
+    </py-script>
+    <button py-click="clear_term()" id="clear-terminal" class="py-button">Clear output window</button>
+  </body>
+</html>
